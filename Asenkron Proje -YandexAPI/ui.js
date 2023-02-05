@@ -8,7 +8,7 @@ function UI(){
 }
 
 UI.prototype.changeUI = function(){//changuUI fonk. onchange oldugunda çalışacak bir fonskşyon olacak.
-    //Arayüz Değiştir
+    //UI change
 
     this.outputImage.src = `ìmages/${this.languageList.value}.png`;
     this.outputImage.innerHTML = this.languageList.options[this.languageList.selectedIndex].textContent
