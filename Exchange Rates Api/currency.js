@@ -1,11 +1,11 @@
-//es6 ile yazıcaz. promise yapılarını kuallanarak veri alışverişi yapmaya çalışscaz. diğer projede async ve awaitleri kullancaz.
+//es6,promise,fetch api
 class Currency{
-    constructor(firstCurrency,secondCurrency){ //USD-TRY bilgisini buraya getiricez.app.js den buna firstCurrency,secondCurrency diye iki değer göndercez
+    constructor(firstCurrency,secondCurrency){ //USD-TRY bilgisini buraya getiricez.
         this.firstCurrency = firstCurrency;
         this.secondCurrency = secondCurrency;
         this.url = "https://api.exchangerate.host/latest?base=";
 
-        this.amount = null ; // amount bilgisi her event oluştugu zaman sürekli değişecek , ilk değerini null yapıcaz.
+        this.amount = null ; // amount bilgisi her event oluştugu zaman sürekli değişecek , ilk değerini default olarak null yapıcaz.
 
     }
     //veri alışverişi için kullancagımız >> exchange metodunu yazalım
@@ -24,7 +24,7 @@ class Currency{
 
             //console.log(total);
 
-            //console.log(total) değerini biz burda değil,BİZ DEĞERİMİZİ APP.JS DE CURRENCY.EXCHANGE İÇİNDE GÖRMEK İSİTİYORUZ.BUNUN İÇİN BİZİM BİR PROMİSE DÖNDÜRMEMİZ GEREKİYOR.
+            //console.log(total) değerini biz burda değil,BİZ DEĞERİMİZİ APP.JS DE CURRENCY.EXCHANGE İÇİNDE GÖRMEK İSTİYORUZ.BUNUN İÇİN BİZİM BİR PROMİSE DÖNDÜRMEMİZ GEREKİYOR.
 
             resolve(total); //
             
@@ -33,8 +33,7 @@ class Currency{
             .catch(err => reject(err)); //hata olması durumunda reject ile app.js ye döncez.
 
             })
-        //---------------------------------------- bu işlem yani exhange fonksiyonu >> artık  bir promise dönüüyor.biz bu promise i app.js de yakalıcaz.(then ile) hatayıda catch ile yakalıcaz.-------------------
-        
+        //bu işlem yani; exhange fonksiyonu >> artık  bir promise dönüyor.biz bu promise i app.js de yakalıcaz.(then ile) hatayıda catch ile yakalıcaz        
 
     }
 
